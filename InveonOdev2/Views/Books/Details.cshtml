@@ -1,0 +1,37 @@
+﻿@model Book
+
+<h1>Kitap Detayları</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Ad</dt>
+    <dd class="col-sm-9">@Model.Title</dd>
+
+    <dt class="col-sm-3">Yazar</dt>
+    <dd class="col-sm-9">@Model.Author</dd>
+
+    <dt class="col-sm-3">Yayın Yılı</dt>
+    <dd class="col-sm-9">@Model.PublicationYear</dd>
+
+    <dt class="col-sm-3">ISBN</dt>
+    <dd class="col-sm-9">@Model.ISBN</dd>
+
+    <dt class="col-sm-3">Tür</dt>
+    <dd class="col-sm-9">@Model.Genre</dd>
+
+    <dt class="col-sm-3">Yayıncı</dt>
+    <dd class="col-sm-9">@Model.Publisher</dd>
+
+    <dt class="col-sm-3">Sayfa Sayısı</dt>
+    <dd class="col-sm-9">@Model.PageCount</dd>
+
+    <dt class="col-sm-3">Dil</dt>
+    <dd class="col-sm-9">@Model.Language</dd>
+
+    <dt class="col-sm-3">Özet</dt>
+    <dd class="col-sm-9">@Model.Summary</dd>
+
+    <dt class="col-sm-3">Mevcut Kopyalar</dt>
+    <dd class="col-sm-9">@Model.AvailableCopies</dd>
+</dl>
+
+<a href="@Url.Action("Index", "Books")" class="btn btn-secondary">Geri Dön</a>

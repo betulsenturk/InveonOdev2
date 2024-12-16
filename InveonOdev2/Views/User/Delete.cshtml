@@ -1,0 +1,15 @@
+﻿@model Microsoft.AspNetCore.Identity.IdentityUser
+
+@{
+    ViewData["Title"] = "Kullanıcı Sil";
+}
+
+<h1>Kullanıcıyı Sil</h1>
+
+<p>Emin misiniz, bu kullanıcıyı silmek istiyor musunuz?</p>
+
+<form action="@Url.Action("Delete", "User", new { userId = Model.Id })" method="post">
+    <button type="submit" class="btn btn-danger">Evet, sil</button>
+</form>
+
+<a href="@Url.Action("Index", "User")" class="btn btn-secondary">Hayır, geri dön</a>

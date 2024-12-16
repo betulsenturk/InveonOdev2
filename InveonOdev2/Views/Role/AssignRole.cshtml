@@ -1,0 +1,28 @@
+﻿@model AssignRoleViewModel
+
+<h2>Kullanıcıya Rol Ata</h2>
+
+<form asp-action="AssignRole" method="post">
+    <input type="hidden" asp-for="UserId" />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rol</th>
+                <th>Seçili mi?</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var role in Model.Roles)
+            {
+                <tr>
+                    <td>@role.RoleName</td>
+                    <td>
+                        <input type="checkbox" asp-for="Roles[@Model.Roles.IndexOf(role)].IsSelected" />
+                        <input type="hidden" asp-for="Roles[@Model.Roles.IndexOf(role)].RoleName" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+
+@{
+    ViewData["Title"] = "Kullanıcılar";
+}
+
+<h1>Kullanıcılar</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>E-posta</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>
+                    <a href="@Url.Action("Edit", "User", new { userId = user.Id })" class="btn btn-warning">Düzenle</a>
+                    <form action="@Url.Action("Delete", "User", new { userId = user.Id })" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Emin misiniz?');">Sil</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "User")" class="btn btn-primary">Kullanıcı Ekle</a>

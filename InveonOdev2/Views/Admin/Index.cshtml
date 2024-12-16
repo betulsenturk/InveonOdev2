@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Admin Paneli";
+}
+
+<h1>Admin Paneli</h1>
+
+<p>Hoş geldiniz! Aşağıdaki işlemleri gerçekleştirebilirsiniz:</p>
+
+<div class="list-group">
+    <a href="@Url.Action("Index", "User")" class="list-group-item list-group-item-action">Kullanıcı İşlemleri</a>
+    <a href="@Url.Action("Index", "Role")" class="list-group-item list-group-item-action">Rol İşlemleri</a>
+    <a href="@Url.Action("AssignRoleIndex", "Role")" class="list-group-item list-group-item-action">Kullanıcıya Rol Atama</a>
+</div>

@@ -1,0 +1,16 @@
+﻿@model Microsoft.AspNetCore.Identity.IdentityRole
+
+@{
+    ViewData["Title"] = "Edit Role";
+}
+
+<h2>Rol Düzenle</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="roleName">Rol Adı</label>
+        <input type="text" class="form-control" id="roleName" name="roleName" value="@Model.Name" required />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
